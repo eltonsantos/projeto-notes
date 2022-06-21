@@ -76,7 +76,7 @@ router.post('', function(req, res) {
     .collection('notes')
     .insertOne({title: title, desc: desc})
 
-  res.redirect('/', 301);
+  res.redirect(301, '/');
 
 });
 
@@ -91,7 +91,7 @@ router.post('/delete', function(req, res) {
     .collection('notes')
     .deleteOne({_id: id})
 
-  res.redirect('/', 301, { msg: "Nota removida!"});
+  res.redirect(301, '/', { msg: "Nota removida!"});
 
 });
 
